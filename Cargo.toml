@@ -1,5 +1,7 @@
 [workspace]
 members = [
   "./bin/wc3-casc-export",
-  "./crates/sylk"
+  "./crates/sylk",
+  "./crates/txt",
+  "./crates/image-conv"
 ]

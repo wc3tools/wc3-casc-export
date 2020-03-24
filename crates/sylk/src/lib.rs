@@ -1,3 +1,5 @@
+//! Sylk (SLK) file reader
+
 mod parse;
 mod reader;
 mod types;
