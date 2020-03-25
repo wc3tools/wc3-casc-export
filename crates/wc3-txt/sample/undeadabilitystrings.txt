@@ -1,0 +1,726 @@
+﻿[Ablr]
+Name=Regain de vie sur la flétrissure
+
+// Replenish Life & Mana
+[Arpb]
+Name=Récupération
+Tip=Récupération
+Ubertip=Restaure les points de vie et de mana à l’unité alliée ciblée.
+Untip=|cffc3dbff|cffc3dbffClic droit pour activer le lancement automatique.|r|r
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.|r
+Hotkey=R
+Unhotkey=R
+
+[Brpb]
+Bufftip=Regain
+Buffubertip=Cette unité a bénéficié d’un Regain. Elle a récupéré une partie de ses points de vie et de mana.
+
+// Replenish Life (Obsidian Statue)
+[Arpl]
+Name=Essence de flétrissure
+Tip=Essence de flétrissure
+Ubertip="Rend <Arpl,DataA1> points de vie aux unités alliées proches."
+Untip=|cffc3dbff|cffc3dbffClic droit pour activer le lancement automatique.|r|r
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.|r
+Hotkey=B
+Unhotkey=B
+
+[Brpl]
+Bufftip=Essence de flétrissure
+Buffubertip="Cette unité bénéficie des effets d’Essence de flétrissure, ce qui lui rend une partie de ses points de vie."
+
+// Spirit Touch (Obsidian Statue)
+[Arpm]
+Name=Toucher spirituel
+Tip=Toucher spirituel
+Ubertip="Rend <Arpm,DataB1> points de mana aux unités alliées proches."
+Untip=|cffc3dbff|cffc3dbffClic droit pour activer le lancement automatique.|r|r
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.|r
+Hotkey=C
+Unhotkey=C
+Order=rendremana
+Orderon=replenishmanaon
+Orderoff=replenishmanaoff
+
+[Brpm]
+Bufftip=Toucher spirituel
+Buffubertip="Cette unité bénéficie des effets de Toucher spirituel, ce qui lui rend une partie de ses points de mana."
+
+// Exhume Corpses
+[Aexh]
+Name=Exhumation
+Tip=Exhumation
+Ubertip="Crée un cadavre dans le chariot à viande toutes les <Aexh,Dur1> s."
+
+// Obsidian Statue mana battery
+[Amb2]
+Name=Récupération du mana
+Tip=Récupération du mana
+Ubertip=Fait récupérer son mana à l’unité alliée ciblée.
+Untip=|cffc3dbff|cffc3dbffClic droit pour activer le lancement automatique.|r|r
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.|r
+Hotkey=R
+Unhotkey=R
+Order=Récupérer
+
+// Destroyer Form 
+[Aave] 
+Name=Forme de destructeur
+
+// Orb of Annihilation
+[Afak]
+Name=Orbe d’annihilation
+Tip=Orbe d’annihilation
+Ubertip="Augmente de <Afak,DataA1> points les dégâts des attaques du Destructeur et leur confère un effet de zone."
+Untip=|cffc3dbff|cffc3dbffClic droit pour activer le lancement automatique.|r|r
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.|r
+Hotkey=O
+Unhotkey=O
+
+// Devour Magic
+[Advm]
+Name=Dévorer la magie
+Tip=Dévorer la magie
+Ubertip="Dissipe tous les effets magiques des unités dans la zone ciblée. Pour chaque unité affectée, le Destructeur regagne <Advm,DataA1> points de vie et <Advm,DataB1> points de mana.|n|cffffcc00Inflige <Advm,DataE1> points de dégâts aux unités invoquées.|r"
+Hotkey=D
+
+// Aura of Blight
+[Aabr]
+Name=Aura de flétrissure
+Tip=Aura de flétrissure
+Ubertip=Confère aux unités mortes-vivantes alliées proches un bonus au regain de points de vie. N’est pas cumulable avec les effets de Flétrissure.
+
+[Babr]
+Bufftip=Aura de flétrissure
+Buffubertip="Cette unité bénéficie des effets d’Aura de flétrissure, ce qui augmente son regain de de points de vie."
+
+// Absorb Mana
+[Aabs]
+Name=Absorption de mana
+Tip=Absorption de mana
+Ubertip=Draine tous les points de mana d’une de vos unités pour les donner au Destructeur.
+Hotkey=B
+
+// Burrow
+[Abur]
+Name=Enfouissement
+EditorSuffix= (Démon des cryptes)
+Tip=Enfouissement
+Untip=Surgissement
+Ubertip="Le Démon des cryptes s’enfouit dans le sol et devient invisible. Il regagne <ucrm,regenHP> points de vie par seconde.|nLe Démon des cryptes ne peut pas attaquer lorsqu’il est sous terre."
+Unubertip=Le Démon des cryptes surgit du sol et redevient visible.
+Hotkey=B
+Unhotkey=B
+
+// Burrow (scarab lvl 2)
+[Abu2]
+Name=Enfouissement
+EditorSuffix= (Scarabée niv 2)
+Tip=Enfouissement
+Untip=Surgissement
+Ubertip=Le nécrophore s’enfouit dans le sol et devient invisible.
+Unubertip=Le nécrophore ressort du sol et redevient visible.
+Hotkey=B
+Unhotkey=B
+
+// Burrow (scarab lvl 3)
+[Abu3]
+Name=Enfouissement
+EditorSuffix= (Scarabée niv 3)
+Tip=Enfouissement
+Untip=Surgissement
+Ubertip=Le nécrophore s’enfouit dans le sol et devient invisible.
+Unubertip=Le nécrophore ressort du sol et redevient visible.
+Hotkey=B
+Unhotkey=B
+
+// Impale
+[AUim]
+Name=Empaler
+Tip=Empaler de |cffffcc00niveau 1|r,Empaler de |cffffcc00niveau 2|r,Empaler de |cffffcc00niveau 3|r
+Ubertip="Le Seigneur des cryptes entaille le sol avec ses griffes et projette une ligne de piquants qui infligent <AUim,DataC1> points de dégâts aux unités terrestres ennemies et les propulsent dans les airs, ce qui les étourdit pendant <AUim,Dur1> s.","Le Seigneur des cryptes entaille le sol avec ses griffes et projette une ligne de piquants qui infligent <AUim,DataC2> points de dégâts aux unités terrestres ennemies et les propulsent dans les airs, ce qui les étourdit pendant <AUim,Dur2> s.","Le Seigneur des cryptes entaille le sol avec ses griffes et projette une ligne de piquants qui infligent <AUim,DataC3> points de dégâts aux unités terrestres ennemies et les propulsent dans les airs, ce qui les étourdit pendant <AUim,Dur3> s."
+Hotkey=E
+Researchtip=Apprendre Empaler de |cffffcc00niveau %d|r
+Researchubertip="Le Seigneur des cryptes entaille le sol avec ses griffes et projette des piquants en ligne droite, ce qui inflige des dégâts aux unités terrestres ennemies et les propulse dans les airs. |n|n|cffffcc00Niveau 1 :|r inflige <AUim,DataC1> points de dégâts, étourdit pendant <AUim,Dur1> s. |n|cffffcc00Niveau 2 :|r inflige <AUim,DataC2> points de dégâts, étourdit pendant <AUim,Dur2> s. |n|cffffcc00Niveau 3 :|r inflige <AUim,DataC3> points de dégâts, étourdit pendant <AUim,Dur3> s."
+Researchhotkey=E
+
+[BUim]
+Bufftip=Empaler
+Buffubertip=Cette unité est empalée. Elle est temporairement figée dans les airs.
+
+[AUts]
+Name=Carapace épineuse
+Tip=Carapace épineuse de |cffffcc00niveau 1|r,Carapace épineuse de |cffffcc00niveau 2|r,Carapace épineuse de |cffffcc00niveau 3|r
+Ubertip="Hérisse d’épines l’armure de chitine du Seigneur des cryptes, ce qui lui confère un bonus de <AUts,DataC1> points d’armure et renvoie <AUts,DataA1,%> % des dégâts de mêlée aux attaquants.","Hérisse d’épines l’armure de chitine du Seigneur des cryptes, ce qui lui confère un bonus de <AUts,DataC2> points d’armure et renvoie <AUts,DataA2,%> % des dégâts de mêlée aux attaquants.","Hérisse d’épines l’armure de chitine du Seigneur des cryptes, ce qui lui confère un bonus de <AUts,DataC3> points d’armure et renvoie <AUts,DataA3,%> % des dégâts de mêlée aux attaquants."
+Researchtip=Apprendre Carapace épineuse de |cffffcc00niveau %d|r
+Researchubertip="Hérisse d’épines l’armure de chitine du Seigneur des cryptes, ce qui la renforce et inflige des dégâts aux ennemis qui l’attaquent en mêlée.|n|n|cffffcc00Niveau 1 :|r renvoie <AUts,DataA1,%> % des dégâts subis et confère <AUts,DataC1> points d’armure.|n|cffffcc00Niveau 2 :|r renvoie <AUts,DataA2,%> % des dégâts subis et confère <AUts,DataC2> points d’armure.|n|cffffcc00Niveau 3 :|r renvoie <AUts,DataA3,%> % des dégâts subis et confère <AUts,DataC3> points d’armure."
+Researchhotkey=S
+
+// Carrion Beetles
+[AUcb]
+Name=Nécrophores
+Tip=Nécrophores de |cffffcc00niveau 1|r,Nécrophores de |cffffcc00niveau 2|r,Nécrophores de |cffffcc00niveau 3|r
+Ubertip="Cible un cadavre pour en faire naître <AUcb,DataA1> nécrophore qui dispose de <ucs1,realHP> points de vie et inflige de <ucs1,mindmg1> à <ucs1,maxdmg1> points de dégâts. Les nécrophores ne disparaissent qu’une fois tués.|n<AUcb,DataE1> nécrophores au maximum.","Cible un cadavre pour en faire naître <AUcb,DataA2> nécrophore qui dispose de <ucs2,realHP> points de vie et inflige de <ucs2,mindmg1> à <ucs2,maxdmg1> points de dégâts. Les nécrophores ne disparaissent qu’une fois tués.|n<AUcb,DataE2> nécrophores au maximum.","Cible un cadavre pour en faire naître <AUcb,DataA3> nécrophore qui dispose de <ucs3,realHP> points de vie et inflige de <ucs3,mindmg1> à <ucs3,maxdmg1> points de dégâts. Les nécrophores ne disparaissent qu’une fois tués.|n<AUcb,DataE3> nécrophores au maximum."
+Hotkey=C
+Researchtip=Apprendre Nécrophores de |cffffcc00niveau %d|r
+Researchubertip="Le Seigneur des cryptes cible un cadavre pour en faire naître <AUcb,DataA1> nécrophore qui attaque ses ennemis. Les nécrophores ne disparaissent qu’une fois tués, mais seuls <AUcb,DataE1> peuvent être contrôlés simultanément.|n|n|cffffcc00Niveau 1 :|r dispose de <ucs1,realHP> points de vie et inflige de <ucs1,mindmg1> à <ucs1,maxdmg1> points de dégâts.|n|cffffcc00Niveau 2 :|r dispose de <ucs2,realHP> points de vie et inflige de <ucs2,mindmg1> à <ucs2,maxdmg1> points de dégâts. Les nécrophores peuvent s’enfouir.|n|cffffcc00Niveau 3 :|r dispose de <ucs3,realHP> points de vie et inflige de <ucs3,mindmg1> à <ucs3,maxdmg1> points de dégâts. Les nécrophores peuvent s’enfouir."
+Researchhotkey=C
+Untip=|cffc3dbffClic droit pour activer le lancement automatique.
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.
+
+[BUcb]
+Bufftip=Nécrophores
+Buffubertip=Les sorts de dissipation infligent des dégâts aux unités invoquées.
+
+// Locust Swarm
+[AUls]
+Name=Nuée de sauterelles
+Tip=Nuée de sauterelles
+Ubertip="Crée une nuée de sauterelles qui s’attaquent aux unités ennemies proches. Les sauterelles convertissent les chairs dévorées en une substance qui rend des points de vie au Seigneur des cryptes lorsqu’elles lui reviennent.|nDure <AUls,HeroDur1> s."
+Hotkey=L
+Researchtip=Apprendre Nuée de sauterelles
+Researchubertip="Crée une nuée de sauterelles qui s’attaquent aux unités ennemies proches. Les sauterelles convertissent les chairs dévorées en une substance qui rend des points de vie au Seigneur des cryptes lorsqu’elles lui reviennent.|nDure <AUls,HeroDur1> s."
+Researchhotkey=L
+
+[BUlo]
+Bufftip=Sauterelle
+
+// Meat Wagon Cargo Hold
+[Amtc]
+Name=Chargement
+
+// True Sight
+[Atru]
+Name=Vision perçante
+Tip=Vision perçante
+Ubertip=Révèle les unités invisibles proches.
+EditorSuffix= (Ombre)
+
+// Acolyte Harvest
+[Aaha]
+Name=Collecter
+Tip=Collecte
+Ubertip=Extrait de l’or dans les mines hantées.
+Untip=Rapporter les ressources
+Unubertip=Rapporte les ressources transportées à l’Hôtel de ville le plus proche.
+Hotkey=G
+Unhotkey=R
+EditorSuffix= (Acolyte Or)
+
+// Unsummon
+[Auns]
+Name=Destruction de bâtiment
+Tip=Destruction de bâtiment
+Ubertip="Détruit le bâtiment et restitue <Auns,DataA1,%>% des ressources nécessaires à sa construction."
+Hotkey=U
+
+[Buns]
+Bufftip=Renvoyer
+
+// Graveyard
+[Agyd]
+Name=Créer un cadavre
+//Tip=Create C|cffffcc00o|rrpse
+//Ubertip="Create a corpse."
+//Hotkey=O
+
+// Sacrifice (Acolyte's button)
+[Alam]
+Name=Sacrifice
+Tip=Sacrifice
+Ubertip=Sélectionnez une Fosse sacrificielle pour sacrifier l’Acolyte et le transformer en Ombre. Les Ombres sont des esprits invisibles qui détectent les unités invisibles.|nLes Ombres ne peuvent pas attaquer.
+Hotkey=C
+EditorSuffix= (Acolyte)
+
+// Sacrifice (Sacrificial Pit's button)
+[Asac]
+Name=Sacrifice
+Tip=Sacrifice
+Ubertip=Sacrifie un Acolyte pour le transformer en Ombre. Les Ombres sont des esprits invisibles capables de détecter les unités invisibles.|nLes Ombres ne peuvent pas attaquer.
+Hotkey=C
+EditorSuffix=(Fosse sacrificielle)
+
+// Cannibalize
+[Acan]
+Name=Cannibalisme
+Tip=Cannibalisme
+Ubertip="Dévore un cadavre proche pour regagner <Acan,DataA1> points de vie par seconde."
+Hotkey=C
+
+// Cannibalize
+[Acn2]
+Name=Cannibalisme
+Tip=Cannibalisme
+Ubertip="Dévore un cadavre proche pour regagner <Acn2,DataA1> points de vie par seconde."
+Hotkey=C
+
+// Spider Attack
+[Aspa]
+Name=Attaque d’araignée
+// This ability modifies the unit's attack.
+
+[Bspa]
+Bufftip=Jeune araignée
+
+// Web
+[Aweb]
+Name=Rets
+Tip=Rets
+Untip=|cffc3dbff|cffc3dbffClic droit pour activer le lancement automatique.
+Ubertip="Prend une unité aérienne ennemie dans des filets et l’oblige à se poser. Les unités prises dans des rets peuvent être attaquées comme des unités terrestres.|nDure <Aweb,Dur1> secondes."
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.
+Hotkey=W
+Unhotkey=W
+
+// Web buff on ground units
+[Bweb]
+Bufftip=Rets
+Buffubertip=Cette unité est prise dans un filet. Elle est clouée au sol et ne peut pas se déplacer.
+EditorSuffix=(terrestre)
+
+// Web buff on air units
+[Bwea]
+Bufftip=Rets
+Buffubertip=Cette unité est prise dans un filet. Elle est clouée au sol et ne peut pas se déplacer.
+EditorSuffix=(aérien)
+
+// Stone Form
+[Astn]
+Name=Forme de pierre
+Tip=Forme de pierre
+Ubertip="Transforme la Gargouille en statue insensible aux sorts, lui confère un bonus à l’armure, et lui permet de regagner <Astn,DataE1> points de vie par seconde.|nLa Gargouille ne peut pas attaquer sous cette forme."
+Hotkey=F
+Untip=Forme de gargouille
+Unubertip=Rend à la Gargouille sa forme normale.
+Unhotkey=F
+
+// Load Corpse
+[Amel]
+Name=Ramassage de cadavre
+Tip=Ramassage de cadavre
+Ubertip=Ramasse un cadavre proche pour l’utiliser plus tard.
+Untip=|cffc3dbffClic droit pour activer le lancement automatique.
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.
+Hotkey=C
+Unhotkey=C
+
+// Unload Corpse
+[Amed]
+Name=Dépôt de cadavres
+Tip=Dépôt de cadavres
+Ubertip="Dépose les cadavres au sol pour les utiliser."
+Hotkey=D
+
+// Disease Cloud
+[Aapl]
+Name=Nuée maléfique
+Tip=Nuée maléfique
+Ubertip="Infecte les unités vivantes proches. La nuée inflige <Aap1,DataB1> points de dégâts par seconde.|nDure <Aap1,DataA1> s."
+
+[Aap1]
+Name=Nuée maléfique
+Tip=Nuée maléfique
+Ubertip="Infecte les unités vivantes proches. La nuée inflige <Aap1,DataB1> points de dégâts par seconde.|nDure <Aap1,DataA1> s."
+
+// Disease Cloud
+[Aap2]
+Name=Nuée maléfique
+EditorSuffix= (Balise de peste)
+
+[Aap3]
+Name=Nuée maléfique
+Tip=Nuée maléfique
+Ubertip="Infecte les unités vivantes proches. La nuée inflige <Aap3,DataB1> points de dégâts par seconde.|nDure <Aap3,DataA1> s."
+EditorSuffix=(neutre hostile)
+
+[Aap4]
+Name=Nuée maléfique
+Tip=Nuée maléfique
+Ubertip="Infecte les unités vivantes proches. La nuée inflige <Aap4,DataB1> points de dégâts par seconde.|nDure <Aap4,DataA1> s."
+EditorSuffix="(neutre hostile, aucun dégât)"
+
+[Bapl]
+Bufftip=Maladie
+Buffubertip="Cette unité est malade. Elle subit des dégâts sur la durée."
+
+// Disease Cloud
+[Apts]
+Name=Nuée maléfique
+Tip=Nuée maléfique
+Ubertip="Une nuée maléfique se répand lors des attaques. Elle inflige <Aap1,DataB1> points de dégâts par seconde.|nDure <Aap1,DataA1> secondes."
+EditorSuffix= (Chariot à viande)
+
+// Frost Breath
+[Afrb]
+Name=Souffle de givre
+// This ability modifies the unit's attack.
+
+// Frost Attack
+[Afra]
+Name=Attaque de givre
+Tip=Attaque de givre
+Ubertip="Ajoute un effet de givre aux attaques, ce qui diminue la vitesse de déplacement des unités ennemies."
+
+// Frost Attack (1,2 button pos version)
+[Afr2]
+Name=Attaque de givre
+Tip=Attaque de givre
+Ubertip="Ajoute un effet de givre aux attaques, ce qui diminue la vitesse de déplacement des unités ennemies."
+
+// Freezing Breath
+[Afrz]
+Name=Souffle givrant
+Tip=Souffle givrant
+Ubertip="Interrompt temporairement toute activité de production du bâtiment cible.|nDure <Afrz,Dur1> s."
+
+[Bfrz]
+Bufftip=Souffle givrant
+Buffubertip=Ce bâtiment est gelé. Il est impossible d’utiliser ses compétences et il ne peut pas être réparé.
+
+// Raise Dead
+[Arai]
+Name=Réanimation morbide
+Tip=Réanimation morbide
+Untip=|cffc3dbffClic droit pour activer le lancement automatique.
+Ubertip="Forme <Arai,DataA1> squelettes à partir d’un cadavre."
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.
+Hotkey=R
+Unhotkey=R
+
+[Brai]
+Bufftip=Serviteur squelette
+Buffubertip=Les sorts de dissipation infligent des dégâts aux unités invoquées.
+
+// Unholy Frenzy
+[Auhf]
+Name=Frénésie impie
+Tip=Frénésie impie
+Ubertip="Augmente de <Auhf,DataA1,%> % la vitesse d’attaque de l’unité ciblée, mais lui ôte <Auhf,DataB1> points de vie par seconde.|nDure <Auhf,Dur1> s."
+Hotkey=U
+
+// Unholy Frenzy (Warlock)
+[Suhf]
+Name=Frénésie impie
+Tip=Frénésie impie
+Ubertip="Augmente la vitesse d’attaque de la cible de <Suhf,DataA1,%>%, mais lui ôte <Suhf,DataB1> points de vie par seconde.|nDure <Suhf,Dur1> secondes."
+Hotkey=U
+EditorSuffix=(Démoniste)
+
+[Buhf]
+Bufftip=Frénésie impie
+Buffubertip="Cette unité est prise de Frénésie impie. Sa vitesse d’attaque est augmentée, mais elle subit des dégâts sur la durée."
+
+// Curse
+[Acrs]
+Name=Malédiction
+Tip=Malédiction
+Ubertip="Maudit une unité ennemie, ce qui augmente de <Acrs,DataA1,%> % la probabilité que ses attaques manquent leur cible.|nDure <Acrs,Dur1> s."
+Untip=|cffc3dbffClic droit pour activer le lancement automatique.
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.
+Hotkey=C
+Unhotkey=C
+
+[Bcrs]
+Bufftip=Malédiction
+Buffubertip=Cette unité est frappée par une malédiction. Ses attaques peuvent rater leur cible.
+
+// Anti-magic Shell
+[Aams]
+Name=Bouclier antimagie
+Tip=Bouclier antimagie
+Ubertip="Crée un bouclier qui empêche tous les sorts d’affecter l’unité ciblée.|nDure <Aams,Dur1> s."
+Hotkey=N
+
+// Anti-magic Shell
+[Aam2]
+Name=Bouclier antimagie
+Tip=Bouclier antimagie
+Ubertip="Crée un bouclier qui empêche <Aam2,DataC1> points de dégâts de sort d’affecter l’unité ciblée.|nDure <Aam2,Dur1> s."
+Hotkey=N
+EditorSuffix=(résistance magique)
+
+[Bams]
+Bufftip=Bouclier antimagie
+Buffubertip="Cette unité bénéficie des effets de Bouclier antimagie, ce qui la rend impossible à cibler par des sorts. Le bouclier peut être dissipé."
+
+[Bam2]
+Bufftip=Bouclier antimagie
+Buffubertip="Cette unité bénéficie des effets de Bouclier antimagie, ce qui implique que les sorts de dégâts doivent détruire le bouclier avant de l’affecter."
+EditorSuffix= (Extra)
+
+// Possession
+[Apos]
+Name=Possession
+Tip=Possession
+Ubertip="S’empare de l’âme d’un ennemi, ce qui vous en donne le contrôle permanent, mais détruit le corps du lanceur de sort.|nInutilisable contre les unités aériennes, les héros ou les monstres de niveau supérieur à <Apos,DataA1>."
+Hotkey=O
+
+// Possession
+[Aps2]
+Name=Possession
+Tip=Possession
+Ubertip="Étourdit la cible et la Banshee pendant <Aps2,Dur1> secondes, durant lesquelles la Banshee subit des dégâts supplémentaires. La Banshee s’empare ensuite de l’âme de l’ennemi, ce qui vous en donne le contrôle permanent, mais détruit le corps du lanceur de sort.|nInutilisable contre les unités aériennes, les héros ou les monstres de niveau supérieur à <Aps2,DataA1>."
+Hotkey=O
+EditorSuffix=(canalisation)
+
+[Bpos]
+Bufftip=Possession
+Buffubertip="Cette unité est possédée."
+
+// Death Coil
+[AUdc]
+Name=Voile mortel
+Tip=Voile mortel de |cffffcc00niveau 1|r,Voile mortel de |cffffcc00niveau 2|r,Voile mortel de |cffffcc00niveau 3|r
+Ubertip="Voile mortel qui rend <AUdc,DataA1> points de vie à une unité morte-vivante ou démoniaque alliée, ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie.","Voile mortel qui rend <AUdc,DataA2> points de vie à une unité morte-vivante ou démoniaque alliée, ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie.","Voile mortel qui rend <AUdc,DataA3> points de vie à une unité morte-vivante ou démoniaque alliée, ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie."
+Ubertip:custom,V0="Voile mortel qui rend <AUdc,DataA1> points de vie à une unité mort-vivante alliée ou ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie.","Voile mortel qui rend <AUdc,DataA2> points de vie à une unité mort-vivante alliée ou ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie.","Voile mortel qui rend <AUdc,DataA3> points de vie à une unité mort-vivante alliée ou ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie."
+Ubertip:custom,V1="Voile mortel qui rend <AUdc,DataA1> points de vie à une unité mort-vivante alliée ou ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie.","Voile mortel qui rend <AUdc,DataA2> points de vie à une unité mort-vivante alliée ou ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie.","Voile mortel qui rend <AUdc,DataA3> points de vie à une unité mort-vivante alliée ou ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie."
+Ubertip:melee,V0="Voile mortel qui rend <AUdc,DataA1> points de vie à une unité mort-vivante alliée ou ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie.","Voile mortel qui rend <AUdc,DataA2> points de vie à une unité mort-vivante alliée ou ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie.","Voile mortel qui rend <AUdc,DataA3> points de vie à une unité mort-vivante alliée ou ou inflige un montant de dégâts égal à la moitié de cette valeur à une unité vivante ennemie."
+Hotkey=C
+Researchtip=Apprendre Voile mortel de |cffffcc00niveau %d|r
+Researchubertip="Voile mortel qui rend des points de vie à une unité morte-vivante ou démoniaque alliée, ou inflige des dégâts à une unité vivante ennemie.|n|n|cffffcc00Niveau 1 :|r rend <AUdc,DataA1> points de vie.|n|cffffcc00Niveau 2 :|r rend <AUdc,DataA2> points de vie.|n|cffffcc00Niveau 3 :|r rend <AUdc,DataA3> points de vie."
+Researchubertip:custom,V0="Voile mortel qui rend des points de vie à une unité morte-vivante alliée ou inflige des dégâts à une unité vivante ennemie. |n|n|cffffcc00Niveau 1 :|r rend <AUdc,DataA1> points de vie. |n|cffffcc00Niveau 2 :|r rend <AUdc,DataA2> points de vie. |n|cffffcc00Niveau 3 :|r rend <AUdc,DataA3> points de vie."
+Researchubertip:custom,V1="Voile mortel qui rend des points de vie à une unité morte-vivante alliée ou inflige des dégâts à une unité vivante ennemie. |n|n|cffffcc00Niveau 1 :|r rend <AUdc,DataA1> points de vie. |n|cffffcc00Niveau 2 :|r rend <AUdc,DataA2> points de vie. |n|cffffcc00Niveau 3 :|r rend <AUdc,DataA3> points de vie."
+Researchubertip:melee,V0="Voile mortel qui rend des points de vie à une unité morte-vivante alliée ou inflige des dégâts à une unité vivante ennemie. |n|n|cffffcc00Niveau 1 :|r rend <AUdc,DataA1> points de vie. |n|cffffcc00Niveau 2 :|r rend <AUdc,DataA2> points de vie. |n|cffffcc00Niveau 3 :|r rend <AUdc,DataA3> points de vie."
+Researchhotkey=C
+
+// Unholy Aura
+[AUau]
+Name=Aura impie
+Tip=Aura impie de |cffffcc00niveau 1|r,Aura impie de |cffffcc00niveau 2|r,Aura impie de |cffffcc00niveau 3|r
+Ubertip="Augmente la vitesse de déplacement des unités alliées proches de <AUau,DataA1,%> %. Augmente également leur regain de vie.","Augmente la vitesse de déplacement des unités alliées proches de <AUau,DataA2,%> %. Augmente également leur regain de vie.","Augmente la vitesse de déplacement des unités alliées proches de <AUau,DataA3,%> %. Augmente également leur regain de vie."
+Researchtip=Apprendre Aura impie de |cffffcc00niveau %d|r
+Researchubertip="Augmente la vitesse de déplacement et le regain de vie des unités alliées proches.|n|n|cffffcc00Niveau 1 :|r augmente la vitesse de déplacement de <AUau,DataA1,%> % et améliore faiblement le regain de vie.|n|cffffcc00Niveau 2 :|r augmente la vitesse de déplacement de <AUau,DataA2,%> % et améliore le regain de vie.|n|cffffcc00Niveau 3 :|r augmente la vitesse de déplacement de <AUau,DataA3,%> % et améliore fortement le regain de vie."
+Researchhotkey=U
+
+[BUau]
+Bufftip=Aura impie
+Buffubertip="Cette unité bénéficie des effets d’Aura impie, ce qui augmente sa vitesse de déplacement et son regain de points de vie."
+
+// Death Pact
+[AUdp]
+Name=Pacte mortel
+Tip=Pacte mortel de |cffffcc00niveau 1|r,Pacte mortel de |cffffcc00niveau 2|r,Pacte mortel de |cffffcc00niveau 3|r
+Ubertip="Sacrifie une unité morte-vivante alliée et transfère <AUdp,DataB1,%> % de ses points de vie au Chevalier de la mort.","Sacrifie une unité morte-vivante alliée et transfère <AUdp,DataB2,%> % de ses points de vie au Chevalier de la mort.","Sacrifie une unité morte-vivante alliée et transfère <AUdp,DataB3,%> % de ses points de vie au Chevalier de la mort."
+Hotkey=E
+Researchtip=Apprendre Pacte mortel de |cffffcc00niveau %d|r
+Researchubertip="Sacrifie une unité morte-vivante alliée et transfère une partie de ses points de vie au Chevalier de la mort.|n|n|cffffcc00Niveau 1 :|r <AUdp,DataB1,%> % des points de vie transférés.|n|cffffcc00Niveau 2 :|r <AUdp,DataB2,%> % des points de vie transférés.|n|cffffcc00Niveau 3 :|r <AUdp,DataB3,%> % des points de vie transférés."
+Researchhotkey=E
+
+// Animate Dead
+[AUan]
+Name=Armée des morts
+Tip=Armée des morts
+Ubertip="Réanime <AUan,DataA1> unités mortes dans une zone pour qu’elles combattent au service du Chevalier de la mort pendant <AUan,Dur1> s. Les unités réanimées sont invulnérables."
+Hotkey=D
+Researchtip=Apprendre Armée des morts
+Researchubertip="Réanime <AUan,DataA1> unités mortes dans une zone pour qu’elles combattent au service du Chevalier de la mort pendant <AUan,Dur1> s. Les unités réanimées sont invulnérables."
+Researchhotkey=D
+Globalmessage=
+Globalsound=
+
+[BUan]
+Bufftip=Armée des morts
+Buffubertip=Les sorts de dissipation infligent des dégâts aux unités invoquées.
+
+// Carrion Swarm
+[AUcs]
+Name=Vol de charognards
+Tip=Vol de charognards de |cffffcc00niveau 1|r,Vol de charognards de |cffffcc00niveau 2|r,Vol de charognards de |cffffcc00niveau 3|r
+Ubertip="Invoque une horde de chauves-souris qui inflige <AUcs,DataA1> points de dégâts aux unités ennemies dans un arc de cercle.","Invoque une horde de chauves-souris qui inflige <AUcs,DataA2> points de dégâts aux unités ennemies dans un arc de cercle.","Invoque une horde de chauves-souris qui inflige <AUcs,DataA3> points de dégâts aux unités ennemies dans un arc de cercle."
+Hotkey=C
+Researchtip=Apprendre Vol de charognards de |cffffcc00niveau %d|r
+Researchubertip="Invoque une horde de chauves-souris qui inflige des dégâts aux ennemis.|n|n|cffffcc00Niveau 1 :|r inflige <AUcs,DataA1> points de dégâts par unité.|n|cffffcc00Niveau 2 :|r inflige <AUcs,DataA2> points de dégâts par unité.|n|cffffcc00Niveau 3 :|r inflige <AUcs,DataA3> points de dégâts par unité."
+Researchhotkey=C
+
+// Sleep
+[AUsl]
+Name=Sommeil
+Tip=Sommeil de |cffffcc00niveau 1|r,Sommeil de |cffffcc00niveau 2|r,Sommeil de |cffffcc00niveau 3|r
+Ubertip="Endort l’unité ennemie ciblée pendant <AUsl,Dur1> s. Attaquer une unité endormie la réveille.","Endort l’unité ennemie ciblée pendant <AUsl,Dur2> s. Attaquer une unité endormie la réveille.","Endort l’unité ennemie ciblée pendant <AUsl,Dur3> s. Attaquer une unité endormie la réveille."
+Hotkey=E
+Researchtip=Apprendre Sommeil de |cffffcc00niveau %d|r
+Researchubertip="Endort l’unité ennemie ciblée. Les unités endormies se réveillent lorsqu’elles sont attaquées.|n|n|cffffcc00Niveau 1|r : endort pendant <AUsl,Dur1> s, coûte <AUsl,Cost1> points de mana.|n|cffffcc00Niveau 2|r : endort pendant <AUsl,Dur2> s, coûte <AUsl,Cost2> points de mana.|n|cffffcc00Niveau 3|r : endort pendant <AUsl,Dur3> s, coûte <AUsl,Cost3> points de mana."
+Researchhotkey=E
+
+[BUsl]
+Bufftip=Sommeil
+Buffubertip="Cette unité est endormie. Elle ne peut ni se déplacer, ni attaquer, ni lancer de sorts. Elle se réveillera si elle est attaquée."
+
+// Vampiric Aura
+[AUav]
+Name=Aura vampirique
+Tip=Aura vampirique de |cffffcc00niveau 1|r,Aura vampirique de |cffffcc00niveau 2|r,Aura vampirique de |cffffcc00niveau 3|r
+Ubertip="Les unités de mêlée alliées proches regagnent un montant de points de vie égal à <AUav,DataA1,%> % des dégâts qu’elles infligent.","Les unités de mêlée alliées proches regagnent un montant de points de vie égal à <AUav,DataA2,%> % des dégâts qu’elles infligent.","Les unités de mêlée alliées proches regagnent un montant de points de vie égal à <AUav,DataA3,%> % des dégâts qu’elles infligent."
+Researchtip=Apprendre Aura vampirique de |cffffcc00niveau %d|r
+Researchubertip="Les unités de mêlée alliées proches regagnent des points de vie lorsqu’elles infligent des dégâts.|n|n|cffffcc00Niveau 1 :|r regain de <AUav,DataA1,%> % des dégâts infligés.|n|cffffcc00Niveau 2 :|r regain de <AUav,DataA2,%> % des dégâts infligés.|n|cffffcc00Niveau 3 :|r regain de <AUav,DataA3,%> % des dégâts infligés."
+Researchhotkey=V
+
+[BUav]
+Bufftip=Aura vampirique
+Buffubertip="Cette unité bénéficie des effets d’Aura vampirique, ce qui lui permet de regagner des points de vie lorsqu’elle inflige des dégâts."
+
+// Frost Nova
+[AUfn]
+Name=Nova de givre
+Tip=Nova de givre de |cffffcc00niveau 1|r,Nova de givre de |cffffcc00niveau 2|r,Nova de givre de |cffffcc00niveau 3|r
+Ubertip="Déclenche une vague de givre qui frappe les ennemis pour infliger <AUfn,DataB1> points de dégâts à la cible et <AUfn,DataA1> points de dégâts de zone. Les dégâts de froid diminuent les vitesses de déplacement et d’attaque des unités pendant <AUfn,Dur1> s.","Déclenche une vague de givre qui frappe les ennemis pour infliger <AUfn,DataB2> points de dégâts à la cible et <AUfn,DataA2> points de dégâts de zone. Les dégâts de froid diminuent les vitesses de déplacement et d’attaque des unités pendant <AUfn,Dur2> s.","Déclenche une vague de givre qui frappe les ennemis pour infliger <AUfn,DataB3> points de dégâts à la cible et <AUfn,DataA3> points de dégâts de zone. Les dégâts de froid diminuent les vitesses de déplacement et d’attaque des unités pendant <AUfn,Dur3> s.","
+Hotkey=N
+Researchtip=Apprendre Nova de givre de |cffffcc00niveau %d|r
+Researchubertip="Déclenche une vague de givre qui inflige des dégâts aux unités ennemies autour de la cible et diminue leurs vitesses d’attaque et de déplacement.|n|n|cffffcc00Niveau 1 :|r inflige <AUfn,DataB1> points de dégâts à la cible et <AUfn,DataA1> points de dégâts de zone.|n|cffffcc00Niveau 2 :|r inflige <AUfn,DataB2> points de dégâts à la cible et <AUfn,DataA2> points de dégâts de zone.|n|cffffcc00Niveau 3 :|r inflige <AUfn,DataB3> points de dégâts à la cible et <AUfn,DataA3> points de dégâts de zone."
+Researchhotkey=N
+
+// Frost Armor
+[AUfa]
+Name=Armure de givre
+Tip=Armure de givre de |cffffcc00niveau 1|r,Armure de givre de |cffffcc00niveau 2|r,Armure de givre de |cffffcc00niveau 3|r
+Ubertip="Crée un bouclier de givre autour de l’unité alliée ciblée. Augmente son armure de <AUfa,DataB1> points et ralentit les unités de mêlée qui l’attaquent pendant <AUfa,Dur1> s.|nDure <AUfa,DataA1> s.","Crée un bouclier de givre autour de l’unité alliée ciblée. Augmente son armure de <AUfa,DataB2> points et ralentit les unités de mêlée qui l’attaquent pendant <AUfa,Dur1> s.|nDure <AUfa,DataA2> s.","Crée un bouclier de givre autour de l’unité alliée ciblée. Augmente son armure de <AUfa,DataB3> points et ralentit les unités de mêlée qui l’attaquent pendant <AUfa,Dur1> s.|nDure <AUfa,DataA3> s."
+Hotkey=F
+Researchtip=Apprendre Armure de givre de |cffffcc00niveau %d|r
+Researchubertip="Crée un bouclier de givre autour de l’unité alliée ciblée. Augmente son armure et ralentit les unités de mêlée qui l’attaquent.|n|n|cffffcc00Niveau 1|r : augmente l’armure de <AUfa,DataB1> points.|n|cffffcc00Niveau 2|r : augmente l’armure de <AUfa,DataB2> points.|n|cffffcc00Niveau 3|r : augmente l’armure de <AUfa,DataB3> points."
+Researchhotkey=F
+
+// Frost Armor (Autocast)
+[AUfu]
+Name=Armure de givre
+EditorSuffix=(Lancement automatique)
+Tip=Armure de givre de |cffffcc00niveau 1|r,Armure de givre de |cffffcc00niveau 2|r,Armure de givre de |cffffcc00niveau 3|r
+Ubertip="Crée un bouclier de givre autour de l’unité alliée ciblée. Augmente son armure de <AUfu,DataB1> points et ralentit les unités de mêlée qui l’attaquent pendant <AUfu,Dur1> s.|nDure <AUfu,DataA1> s.","Crée un bouclier de givre autour de l’unité alliée ciblée. Augmente son armure de <AUfa,DataB2> points et ralentit les unités de mêlée qui l’attaquent pendant <AUfa,Dur1> s.|nDure <AUfa,DataA2> s.","Crée un bouclier de givre autour de l’unité alliée ciblée. Augmente son armure de <AUfa,DataB3> points et ralentit les unités de mêlée qui l’attaquent pendant <AUfa,Dur1> s.|nDure <AUfa,DataA3> s."
+Untip=|cffc3dbffClic droit pour activer le lancement automatique.
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.
+Hotkey=F
+Researchtip=Apprendre Armure de givre de |cffffcc00niveau %d|r
+Researchubertip="Crée un bouclier de givre autour de l’unité alliée ciblée. Augmente son armure et ralentit les unités de mêlée qui l’attaquent.|n|n|cffffcc00Niveau 1|r : augmente l’armure de <AUfu,DataB1> points.|n|cffffcc00Niveau 2|r : augmente l’armure de <AUfu,DataB2> points.|n|cffffcc00Niveau 3|r : augmente l’armure de <AUfu,DataB3> points."
+Researchhotkey=F
+
+[BUfa]
+Bufftip=Armure de givre
+Buffubertip="Cette unité bénéficie des effets d’Armure de givre, ce qui augmente son armure et réduit temporairement les vitesses de déplacement et d’attaque des unités de mêlée qui l’attaquent."
+
+// Dark Ritual
+[AUdr]
+Name=Rituel des ténèbres
+Tip=Rituel des ténèbres de |cffffcc00niveau 1|r,Rituel des ténèbres de |cffffcc00niveau 2|r,Rituel des ténèbres de |cffffcc00niveau 3|r
+Ubertip="Sacrifie l’unité morte-vivante alliée ciblée et convertit <AUdr,DataA1,%> % de ses points de vie en points de mana pour la Liche.","Sacrifie l’unité morte-vivante alliée ciblée et convertit <AUdr,DataA2,%> % de ses points de vie en points de mana pour la Liche.","Sacrifie l’unité morte-vivante alliée ciblée et convertit <AUdr,DataA3,%> % de ses points de vie en points de mana pour la Liche."
+Hotkey=R
+Researchtip=Apprendre Rituel des ténèbres de |cffffcc00niveau %d|r
+Researchubertip="Sacrifie l’unité morte-vivante alliée ciblée et convertit ses points de vie en points de mana pour la Liche.|n|n|cffffcc00Niveau 1 :|r <AUdr,DataA1,%> % des points de vie convertis.|n|cffffcc00Niveau 2 :|r <AUdr,DataA2,%> % des points de vie convertis.|n|cffffcc00Niveau 3 :|r <AUdr,DataA3,%> % des points de vie convertis."
+Researchhotkey=R
+
+// Death And Decay
+[AUdd]
+Name=Mort et décomposition
+Tip=Mort et décomposition
+Ubertip="Inflige chaque seconde un montant de dégâts égal à <AUdd,DataA1,%> % de son maximum de points de vie dans la zone d’effet. Détruit également les arbres.|nDure <AUdd,Dur1> s."
+Hotkey=D
+Researchtip=Apprendre Mort et décomposition
+Researchubertip="Inflige chaque seconde un montant de dégâts égal à <AUdd,DataA1,%> % de son maximum de points de vie dans la zone d’effet. Détruit également les arbres."
+Researchhotkey=D
+
+[BUdd]
+Bufftip=Mort et décomposition
+Buffubertip="Cette unité subit les effets de Mort et Décomposition, ce qui lui inflige des dégâts sur la durée."
+
+// Cripple
+[Acri]
+Name=Faiblesse
+Tip=Faiblesse
+Ubertip="Réduit la vitesse de déplacement de l’unité ennemie ciblée de <Acri,DataA1,%> %, sa vitesse d’attaque de <Acri,DataB1,%> %, et les dégâts qu’elle inflige de <Acri,DataC1,%> %.|nDure <Acri,Dur1> s."
+Hotkey=C
+
+// Cripple (Warlock)
+[Scri]
+Name=Faiblesse
+Tip=Faiblesse
+Ubertip="Réduit la vitesse de déplacement de l’unité ennemie ciblée de <Acri,DataA1,%> %, sa vitesse d’attaque de <Acri,DataB1,%> %, et les dégâts qu’elle inflige de <Acri,DataC1,%> %.|nDure <Acri,Dur1> s."
+Hotkey=C
+EditorSuffix=(Démoniste)
+
+[Bcri]
+Bufftip=Faiblesse
+Buffubertip="Cette unité est prise de faiblesse. Ses vitesses d’attaque et de déplacement sont réduites, ainsi que les dégâts qu’elle inflige."
+
+// Restore
+[Arst]
+Name=Restauration
+Tip=Restauration
+Ubertip=Répare les unités mécaniques et les bâtiments contre un coût en ressources.
+Untip=|cffc3dbffClic droit pour activer le lancement automatique.
+Unubertip=|cffc3dbffClic droit pour désactiver le lancement automatique.
+Hotkey=R
+Unhotkey=R
+
+[AUin]
+Name=Inferno
+Tip=Inferno
+Ubertip="Invoque un démon infernal qui tombe du ciel pour infliger <AUin,DataA1> points de dégâts aux unités terrestres ennemies dans la zone, en plus de les étourdir pendant <AUin,Dur1> s. Dure <AUin,DataB1> s."
+Hotkey=N
+Researchtip=Apprendre Inferno
+Researchubertip="Invoque un démon infernal qui tombe du ciel pour infliger <AUin,DataA1> points de dégâts aux unités terrestres ennemies dans la zone, en plus de les étourdir pendant <AUin,Dur1> s. Dure <AUin,DataB1> s."
+Researchhotkey=N
+
+//----------------------------------------------------
+// Buffs with no in-game text
+// EditorName is for the Object Editor list only
+
+[BUcs]
+EditorName=Vol de charognards (lanceur)
+
+[BUsp]
+EditorName=Sommeil (Pause)
+
+[BUst]
+EditorName=Sommeil (Étourdissement)
+
+[BUts]
+EditorName=Carapace épineuse
+
+[Bplg]
+EditorName=Nuée maléfique
+
+[BUad]
+EditorName=Armée des morts (extra)
+
+[Bpoc]
+EditorName=Possession (lanceur)
+
+[XUdd]
+EditorName=Mort et décomposition (effet)
+
+[Xfus]
+EditorName=Dégâts aux bâtiments - Mort-vivant (faibles)
+
+[Xfum]
+EditorName=Dégâts aux bâtiments - Mort-vivant (intermédiaires)
+
+[Xful]
+EditorName=Dégâts aux bâtiments - Mort-vivant (élevés)
+
+[Afrc]
+EditorSuffix=(Nouveau :, a une icône)
+Ubertip="Ajoute un effet de givre aux attaques, ce qui diminue la vitesse de déplacement des unités ennemies."
+Tip=Attaque de givre
+Name=Attaque de givre
+
+[Augf]
+EditorSuffix=(Icône)
+Ubertip="Augmente de <Rugf,base1,%>% la vitesse de déplacement et d’attaque des goules."
+Tip=Frénésie de goule
+Name=Frénésie de goule
+
+[Augh]
+EditorSuffix=(Icône)
+Ubertip=Cette unité est invisible en permanence.
+Tip=Ombre
+Name=Ombre
+
+[Ausm]
+EditorSuffix=(Icône)
+Ubertip="L’un des deux Squelettes créés par Réanimation morbide est un Mage squelette et augmente la durée des Guerriers squelettes et des Mages squelettes réanimés de <Rusl,base1> secondes."
+Tip=Maîtrise squelettique
+Name=Maîtrise squelettique
+
+[Auuf]
+Ubertip="Sacrifie une unité morte-vivante alliée. Toutes les unités non mécaniques proches gagnent Frénésie impie, qui augmente leur vitesse d’attaque de <Auuf,DataA1,%>% mais draine <Auuf,DataB1> points de vie par seconde. |nDure <Auuf,Dur1> secondes."
+Tip=Provoquer la Frénésie impie
+Name=Provoquer la Frénésie impie
+Hotkey=U

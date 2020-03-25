@@ -1,5 +1,5 @@
 [package]
-name = "txt"
+name = "wc3-sylk"
 version = "0.1.0"
 authors = ["Flux Xu <fluxxu@gmail.com>"]
 edition = "2018"

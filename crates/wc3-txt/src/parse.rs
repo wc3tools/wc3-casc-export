@@ -1,18 +1,18 @@
 use crate::types::*;
 use nom::{
   branch::alt,
-  bytes::complete::{tag, take_while, take_while1},
+  bytes::complete::{escaped, tag, take_while, take_while1},
   character::complete::alphanumeric1,
-  character::complete::char,
   character::complete::line_ending,
   character::complete::space0,
+  character::complete::{char, one_of},
   combinator::all_consuming,
   combinator::peek,
   combinator::{map, not, opt},
   eof,
   error::context,
   error::VerboseError,
-  multi::{fold_many0, many0},
+  multi::{fold_many0, many0, many1},
   sequence::{pair, preceded, terminated, tuple},
 };
 
@@ -50,17 +50,81 @@ fn prop_key(i: &str) -> ParseResult<&str, &str> {
   take_while1(|c| c != '=' && c != '\r' && c != '\n')(i)
 }
 
-fn invalid_prop_line(i: &str) -> ParseResult<&str, &str> {
+fn invalid_prop_line(i: &str) -> ParseResult<&str, PropValue> {
   let (i, _) = not(peek(char('[')))(i)?;
 
-  terminated(prop_key, alt((end_of_file, line_ending)))(i)
+  map(
+    terminated(prop_key, alt((end_of_file, line_ending))),
+    PropValue::String,
+  )(i)
 }
 
-fn prop(i: &str) -> ParseResult<&str, (&str, &str)> {
+fn quoted_str(i: &str) -> ParseResult<&str, &str> {
+  let t = take_while1(|c| c != '"' && c != '\r' && c != '\n');
+  preceded(
+    char('"'),
+    terminated(escaped(t, '\\', one_of("\"n\\")), pair(char('"'), space0)),
+  )(i)
+}
+
+fn unquoted_str_item(i: &str) -> ParseResult<&str, &str> {
+  terminated(
+    take_while1(|c| c != '\r' && c != '\n' && c != ','),
+    peek(alt((tag(","), alt((end_of_file, line_ending))))),
+  )(i)
+}
+
+fn prop_value_sep(i: &str) -> ParseResult<&str, &str> {
+  map(tuple((space0, char(','), space0)), |_| "")(i)
+}
+
+fn prop_value(i: &str) -> ParseResult<&str, PropValue> {
+  alt((
+    terminated(
+      alt((
+        // ""
+        map(tag("\"\""), |_| PropValue::String("")),
+        // ""
+        map(quoted_str, PropValue::String),
+      )),
+      peek(alt((line_ending, end_of_file))),
+    ),
+    // list
+    terminated(
+      map(
+        many1(alt((
+          // ,
+          map(
+            terminated(
+              prop_value_sep,
+              peek(alt((prop_value_sep, line_ending, end_of_file))),
+            ),
+            |_| None,
+          ),
+          // "..."
+          map(quoted_str, Some),
+          // ...,
+          map(terminated(unquoted_str_item, peek(prop_value_sep)), Some),
+          // ,"..."
+          // ,...
+          map(
+            preceded(prop_value_sep, alt((quoted_str, unquoted_str_item))),
+            Some,
+          ),
+        ))),
+        |list| PropValue::Array(list.into_iter().filter_map(|v| v).collect()),
+      ),
+      peek(alt((line_ending, end_of_file))),
+    ),
+    map(take_rest_of_line, PropValue::String),
+  ))(i)
+}
+
+fn prop(i: &str) -> ParseResult<&str, (&str, PropValue)> {
   let (i, _) = not(peek(char('[')))(i)?;
 
   let k = prop_key;
-  let v = take_rest_of_line;
+  let v = prop_value;
   let kv = map(tuple((k, char('='), v)), |(k, _, v)| (k, v));
   let prop = terminated(kv, alt((end_of_file, line_ending)));
   prop(i)
@@ -160,14 +224,49 @@ mod tests {
   }
 
   #[test]
+  fn test_prop_value() {
+    assert_eq!(prop_value(r#"1,2,3"#), Ok(("", vec!["1", "2", "3"].into())));
+
+    assert_eq!(
+      prop_value(r#""123",4,5"#),
+      Ok(("", vec!["123", "4", "5"].into()))
+    );
+
+    assert_eq!(prop_value(r#""12""#), Ok(("", "12".into())));
+
+    assert_eq!(prop_value(r#""1","#), Ok(("", vec!["1"].into())));
+
+    assert_eq!(prop_value(r#""1""2""#), Ok(("", vec!["1", "2"].into())));
+
+    assert_eq!(prop_value(r#""12"   "#), Ok(("", "12".into())));
+    assert_eq!(prop_value(r#""12"   ,,,,"#), Ok(("", vec!["12"].into())));
+  }
+
+  #[test]
   fn test_prop() {
     assert_eq!(
-      prop("UnitSkinID=osw1,osw2,osw3,osw3"),
-      Ok(("", ("UnitSkinID", "osw1,osw2,osw3,osw3")))
+      prop("UnitSkinID=1233"),
+      Ok(("", ("UnitSkinID", "1233".into())))
     );
     assert_eq!(
-      prop("UnitSkinID=osw1,osw2,osw3,osw3\n"),
-      Ok(("", ("UnitSkinID", "osw1,osw2,osw3,osw3")))
+      prop("UnitSkinID=1233\n"),
+      Ok(("", ("UnitSkinID", "1233".into())))
+    );
+    assert_eq!(
+      prop("UnitSkinID=\"123\"\n"),
+      Ok(("", ("UnitSkinID", "123".into())))
+    );
+    assert_eq!(
+      prop("UnitSkinID=\"123\",\"345\"\n"),
+      Ok(("", ("UnitSkinID", vec!["123", "345"].into())))
+    );
+    assert_eq!(
+      prop("UnitSkinID=\"123\" , \"345\"\n"),
+      Ok(("", ("UnitSkinID", vec!["123", "345"].into())))
+    );
+    assert_eq!(
+      prop(r#"Herodeath="1,2","3,4",56,"7,8""#),
+      Ok(("", ("Herodeath", vec!["1,2", "3,4", "56", "7,8"].into())))
     );
   }
 
@@ -178,7 +277,7 @@ mod tests {
         r#"// test!
 [ACs7]
 skinType=ability
-UnitSkinID=osw1,osw2,osw3,osw3
+UnitSkinID=1233
 Art=ReplaceableTextures\CommandButtons\BTNSpiritWolf.blp
 Researchart=ReplaceableTextures\CommandButtons\BTNSpiritWolf.blp
 
@@ -191,19 +290,19 @@ Specialart=Abilities\Spells\Orc\FeralSpirit\feralspirittarget.mdl
         Section {
           name: "ACs7",
           props: [
-            ("skinType", "ability"),
-            ("UnitSkinID", "osw1,osw2,osw3,osw3"),
+            ("skinType", "ability".into()),
+            ("UnitSkinID", "1233".into()),
             (
               "Art",
-              r#"ReplaceableTextures\CommandButtons\BTNSpiritWolf.blp"#
+              r#"ReplaceableTextures\CommandButtons\BTNSpiritWolf.blp"#.into()
             ),
             (
               "Researchart",
-              r#"ReplaceableTextures\CommandButtons\BTNSpiritWolf.blp"#
+              r#"ReplaceableTextures\CommandButtons\BTNSpiritWolf.blp"#.into()
             ),
             (
               "Specialart",
-              r#"Abilities\Spells\Orc\FeralSpirit\feralspirittarget.mdl"#
+              r#"Abilities\Spells\Orc\FeralSpirit\feralspirittarget.mdl"#.into()
             )
           ]
           .iter()
@@ -237,7 +336,7 @@ Name=焚身化骨
           Item::Comment("2"),
           Item::Section(Section {
             name: "test",
-            props: [("Name", "焚身化骨")].iter().cloned().collect()
+            props: [("Name", "焚身化骨".into())].iter().cloned().collect()
           })
         ]
       ))
@@ -266,5 +365,14 @@ Name=焚身化骨
     )))
     .unwrap();
     assert_eq!(sections.len(), 364);
+  }
+
+  #[test]
+  fn test_parse_sections_strings2() {
+    let sections = parse_sections(crate::bom::strip_utf8_bom(&include_str!(
+      "../sample/undeadabilitystrings.txt"
+    )))
+    .unwrap();
+    assert_eq!(sections.len(), 108);
   }
 }
