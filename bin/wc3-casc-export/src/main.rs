@@ -7,7 +7,10 @@ use std::fs;
 use std::path::PathBuf;
 
 mod constants;
+mod func;
+mod helpers;
 mod locale;
+mod skin;
 mod storage;
 
 use storage::StorageHandle;
@@ -28,4 +31,6 @@ fn main() {
   let storage = StorageHandle::new(open(&storage_path).expect("open storage"));
 
   locale::export(storage.clone(), &out_path).expect("export locale");
+  skin::export(storage.clone(), &out_path).expect("export skin");
+  // func::export(storage.clone(), &out_path).expect("export func");
 }

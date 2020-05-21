@@ -11,7 +11,7 @@ use crate::storage::StorageHandle;
 use wc3_txt::bom::strip_utf8_bom;
 use wc3_txt::parse_sections;
 
-const SUB_GROUPS: &[&str] = &["ability", "unit", "upgrade"];
+const SUB_GROUPS: &[&str] = &["ability", "unit", "upgrade", "item"];
 
 pub fn export(storage: StorageHandle, base_path: &Path) -> Result<()> {
   info!("exporting...");
